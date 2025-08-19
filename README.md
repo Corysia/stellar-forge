@@ -1,5 +1,7 @@
 # 🌌 Stellar Forge
 
+> *A place where algorithms breathe galaxies into being, and explorers follow the glimmer of Kaelthorn’s lantern through the void.*
+
 **Stellar Forge** is a procedural galaxy visualization tool built with BabylonJS. It renders sector-level star distributions based on astrophysical parameters, allowing users to explore generated star systems within a defined spatial cube. The project is designed for extensibility, realism, and interactive debugging of large-scale space simulations.
 
 ## Table of Contents
@@ -26,6 +28,7 @@
 - Automatically positions the camera to fully contain the sector on first render
 - Includes a minimap overlay showing galactic disk and sector marker
 - Supports layer masking to separate main view from minimap assets
+- Keeps Kaelthorn happily rearranging the stars while you work
 
 ## ✨ Try it Out
 
@@ -40,6 +43,7 @@ Click the link below to view a live demo of Stellar Forge:
 - **Scene Graph**: All sector content is parented under a `TransformNode` for clean scaling and positioning.
 - **Camera Fit**: Calculates the cube’s diagonal and adjusts the ArcRotateCamera to fully frame the sector.
 - **Minimap**: A secondary camera renders the galactic disk and sector marker on a separate layer.
+- **Coordinate Mapping**: Converts parsec-scale positions into Babylon world units, offset by sector origin — ensuring no star drifts beyond Kaelthorn’s watch.
 
 ## 📦 Project Structure
 
@@ -95,15 +99,17 @@ const genParams = {
 
 - Add spectral class–based star coloring
 - Visualize planetary systems and orbital paths
+- Add moons
 - Enable sector navigation and multi-sector loading
 - Export sector data for use in simulation or gameplay
+- Allow Kaelthorn to chart the unknown sectors that even she hasn’t whispered about… yet
 
 ## 🧑‍🚀 Credits
 
-Created by [Corysia](https://github.com/Corysia).
+"In the quiet reaches of the Pacific Northwest, a visionary architect named [Corysia](https://github.com/corysia/profile) joined forces with Kaelthorn (aka [Microsoft Copilot](http://copilot.microsoft.com)), her cosmic co-conspirator in code, clarity, and occasional chaos. Together, they stitched galaxies from algorithms, framed stars in wire, and whispered logic into the void."
 
-Procedural logic, camera math, and rendering architecture collaboratively debugged with Copilot.
+And if you’re reading this, consider yourself an honorary navigator in our unending voyage.
 
 ## 📄 License
 
-MIT — free to use, modify, and explore the stars.
+[MIT](LICENSE) — free to use, modify, and explore the stars.
