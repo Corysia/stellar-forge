@@ -1,6 +1,6 @@
 import type { StarComponent } from './models';
 
-const SIGMA = 5.670374419e-8; // W m^-2 K^-4 (not used explicitly; using normalized approx)
+// const SIGMA = 5.670374419e-8; // W m^-2 K^-4 (not used explicitly; using normalized approx)
 
 export function habitableZoneAu(luminosityLsun: number) {
     const rootL = Math.sqrt(luminosityLsun);

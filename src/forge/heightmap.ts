@@ -4,7 +4,7 @@ import { RNG, hashSeed } from '../forge/random';
 function smoothstep(t: number) { return t * t * (3 - 2 * t); }
 
 export function heightAt(seed: number, x: number, y: number): number {
-    const rng = new RNG(hashSeed(seed, (Math.floor(x) << 16) ^ Math.floor(y)));
+    // const rng = new RNG(hashSeed(seed, (Math.floor(x) << 16) ^ Math.floor(y)));
     const x0 = Math.floor(x), y0 = Math.floor(y);
     const xf = x - x0, yf = y - y0;
 

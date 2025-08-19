@@ -1,22 +1,15 @@
 // src/render/starmapPreview.ts
-import {
-    Scene,
-    Camera,
-    FreeCamera,
-    Vector3,
-    Viewport,
-    Color4
-} from "@babylonjs/core";
+import { Scene, Camera, FreeCamera, Vector3, Viewport } from "@babylonjs/core";
 
 export class StarmapPreview {
-    private previewCam: Camera;
-    private center: Vector3;
+    private readonly previewCam: Camera;
+    private readonly center: Vector3;
 
     constructor(
-        private scene: Scene,
-        private mainCamera: Camera,
+        private readonly scene: Scene,
+        private readonly mainCamera: Camera,
         center: Vector3 = Vector3.Zero(),
-        private altitude = 5000,
+        private readonly altitude = 5000,
         private orthoSize = 5000
     ) {
         this.center = center.clone();

@@ -34,7 +34,7 @@ function pickOrbitType(rng: RNG, params: GenerationParams): OrbitType {
     return rng.bool(0.07) ? 'S' : 'P'; // satellite vs primary
 }
 
-function classifyPlanet(semimajorAu: number, massEarth: number, eqK: number): Planet['class'] {
+function classifyPlanet(_semimajorAu: number, massEarth: number, eqK: number): Planet['class'] {
     const cold = eqK < 200;
     const hot = eqK > 800;
     if (massEarth >= 60) return hot ? 'Hot Jupiter' : 'Gas Giant';
@@ -62,7 +62,7 @@ function chooseAtmosphere(rng: RNG, klass: Planet['class'], massEarth: number, e
     return { kind: rng.bool(0.5) ? 'Thin' : 'Thick', pressure: rng.float(0.2, 5) };
 }
 
-function planetHazards(rng: RNG, p: Planet): string[] {
+function planetHazards(_rng: RNG, p: Planet): string[] {
     const hz: string[] = [];
     if (p.atmosphere === 'None') hz.push('Vacuum');
     if (p.atmosphere === 'Toxic') hz.push('Toxic Atmosphere');
@@ -283,7 +283,7 @@ function randomUnitVector(rng: RNG) {
     return { x: r * Math.cos(t), y: r * Math.sin(t), z };
 }
 
-function planetName(sysName: string, idx: number, rng: RNG) {
+function planetName(sysName: string, idx: number, _rng: RNG) {
     const suffix = String.fromCharCode(97 + idx); // a, b, c
     return `${sysName} ${suffix}`;
 }

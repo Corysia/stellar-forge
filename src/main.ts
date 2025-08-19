@@ -4,7 +4,7 @@ import {
     Scene,
     ArcRotateCamera,
     Vector3,
-    HemisphericLight,
+    // HemisphericLight,
     MeshBuilder,
     StandardMaterial,
     Color3,
@@ -27,7 +27,7 @@ const camera = new ArcRotateCamera("MainCamera", Math.PI / 4, Math.PI / 3, 5000,
 camera.layerMask = MAIN_LAYER;
 camera.attachControl(canvas, true);
 
-new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+// const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
 
 const galaxyParams: GalaxyParams = {
     galaxySeed: 12345,
@@ -55,7 +55,7 @@ const genParams: GenerationParams = {
 
 const sectorKey = { x: 0, y: 0, z: 0, sizePc: galaxyParams.sectorSizePc };
 
-const sector = generateSectorHeaders(galaxyParams.galaxySeed, sectorKey, genParams, galaxyParams);
+const sector = generateSectorHeaders(galaxyParams.galaxySeed, sectorKey, galaxyParams);
 const systems = sector.starHeaders.map(h => expandStarHeaderToSystem(h, genParams));
 
 const sectorSizeUnits = sectorKey.sizePc * PC_TO_UNITS;

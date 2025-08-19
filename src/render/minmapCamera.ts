@@ -19,7 +19,6 @@ export function attachMinimapViewport(
     const h = opts?.h ?? 0.25;
     const altitude = opts?.altitude ?? 2000;
     const orthoSize = opts?.orthoSize ?? 2000;
-    const bg = opts?.bg ?? new Color4(0, 0, 0, 0.35);
     const layerMask = opts?.layerMask;
 
     const mini = new FreeCamera("minimapCam", new Vector3(0, altitude, 0), scene);
@@ -32,7 +31,6 @@ export function attachMinimapViewport(
     mini.minZ = 0.1;
     mini.maxZ = 1e9;
     mini.viewport = new Viewport(x, y, w, h);
-    // mini.clearColor = bg;
     if (layerMask !== undefined) mini.layerMask = layerMask;
 
     // Render both main and minimap each frame

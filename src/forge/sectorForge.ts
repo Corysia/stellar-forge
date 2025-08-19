@@ -8,7 +8,7 @@ export function sectorKey(x: number, y: number, z: number, sizePc: number): Sect
     return { x, y, z, sizePc };
 }
 
-export function generateSectorHeaders(galaxySeed: number, key: SectorKey, gen: GenerationParams, gp: GalaxyParams): Sector {
+export function generateSectorHeaders(galaxySeed: number, key: SectorKey, gp: GalaxyParams): Sector {
     const rng = new RNG(hashSeed(galaxySeed, key.x * 73856093 ^ key.y * 19349663 ^ key.z * 83492791));
     const center = {
         x: (key.x + 0.5) * key.sizePc,
